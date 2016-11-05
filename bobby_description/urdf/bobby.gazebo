@@ -14,4 +14,29 @@
             <robotNamespace>/bobby</robotNamespace>
         </plugin>
     </gazebo>
+    
+    <gazebo>
+        <plugin name="differential_drive_controller"
+                    filename="libgazebo_ros_diff_drive.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>100</updateRate>
+            <leftJoint>left_wheel_hinge</leftJoint>
+            <rightJoint>right_wheel_hinge</rightJoint>
+            <wheelSeparation>${chassisWidth+wheelWidth}</wheelSeparation>
+            <wheelDiameter>${2*wheelRadius}</wheelDiameter>
+            <wheelTorque>20</wheelTorque>
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom_diffdrive</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <odometrySource>world</odometrySource>
+            <robotBaseFrame>footprint</robotBaseFrame>
+            <rosDebugLevel>na</rosDebugLevel>
+            <robotNamespace>/bobby</robotNamespace>
+            <publishTf>true</publishTf>
+            <publishWheelTF>true</publishWheelTF>
+            <publishWheelJointState>true</publishWheelJointState>
+            <wheelAcceleration>1.8</wheelAcceleration>
+            <legacyMode>false</legacyMode>
+        </plugin>
+    </gazebo>
 </robot>
