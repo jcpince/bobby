@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot name='bobby' xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find bobby_description)/urdf/bobby_properties.xacro" />
+    <xacro:include filename="$(find bobby_description)/urdf/bobby.gazebo" />
+    <xacro:include filename="$(find bobby_description)/urdf/materials.xacro" />
+    <xacro:include filename="$(find bobby_description)/urdf/macros.xacro" />
+    
+    <link name='footprint' />
+    
+    <joint name="base_joint" type="fixed">
+        <parent link="footprint"/>
+        <child link="chassis"/>
+    </joint>
+
+    <link name='chassis'>
+        <collision> 
+            <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/> 
+            <geometry> 
+                <box size="${chassisLength} ${chassisWidth} ${chassisHeight}"/> 
+            </geometry> 
+        </collision>
+        <visual> 
+            <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/> 
+            <geometry> 
+                <box size="${chassisLength} ${chassisWidth} ${chassisHeight}"/> 
+            </geometry> 
+            <material name="orange"/>
+        </visual>
+        <inertial> 
+            <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/> 
+            <mass value="${chassisMass}"/> 
+            <box_inertia
+                m="${chassisMass}"
+                x="${chassisLength}"
+                y="${chassisWidth}"
+                z="${chassisHeight}"
+            />
+        </inertial>
+    </link>
+    
+    <joint name="fixed" type="fixed">
+        <parent link="chassis"/>
+        <child link="caster_wheel"/>
+    </joint>
+
+    <link name="caster_wheel">
+        <collision>
+            <origin xyz="${casterRadius-chassisLength/2} 0 ${casterRadius-chassisHeight+wheelRadius}" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="${casterRadius}"/>
+            </geometry>
+        </collision>
+
+        <visual>
+            <origin xyz="${casterRadius-chassisLength/2} 0 ${casterRadius-chassisHeight+wheelRadius}" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="${casterRadius}"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+
+        <inertial>
+            <origin xyz="${casterRadius-chassisLength/2} 0 ${casterRadius-chassisHeight+wheelRadius}" rpy="0 0 0"/>
+            <mass value="${casterMass}"/>
+            <sphere_inertia m="${casterMass}" r="${casterRadius}"/>
+        </inertial>
+    </link>
+    
+    <wheel lr="left" tY="1"/>
+    <wheel lr="right" tY="-1"/>
+</robot>
