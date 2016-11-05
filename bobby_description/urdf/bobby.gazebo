@@ -31,7 +31,6 @@
             <odometrySource>world</odometrySource>
             <robotBaseFrame>footprint</robotBaseFrame>
             <rosDebugLevel>na</rosDebugLevel>
-            <robotNamespace>/bobby</robotNamespace>
             <publishTf>true</publishTf>
             <publishWheelTF>true</publishWheelTF>
             <publishWheelJointState>true</publishWheelJointState>
