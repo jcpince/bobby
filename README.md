@@ -1,5 +1,7 @@
 # Bobby the robot
 
+See http://www.generationrobots.com/blog/en/2015/02/robotic-simulation-scenarios-with-gazebo-and-ros/
+
 Sources to operate a simple 2 wheels + caster wheel.
 
 In order to simulate, simply run the following commands in two shells:
