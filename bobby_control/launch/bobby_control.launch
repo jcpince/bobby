@@ -22,4 +22,8 @@
     <remap from="/joint_states" to="/bobby/joint_states" />
   </node>
 
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping"
+        args="_base_frame:=odom">
+    <remap from="scan" to="/bobby/laser/scan" />
+  </node>
 </launch>
