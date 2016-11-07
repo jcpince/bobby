@@ -4,7 +4,9 @@ Sources to operate a simple 2 wheels + caster wheel.
 
 In order to simulate, simply run the following commands in two shells:
  - roslaunch bobby_gazebo bobby_world.launch
- - rosrun turtlesim turtle_teleop_key /turtle1/cmd_vel:=/bobby/cmd_vel
+ - rosrun turtlesim turtle_teleop_key /turtle1/cmd_vel:=/cmd_vel
+ - OR -
+ - rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
 In order to vizualize with RViz:
  - Launch the world as described before
