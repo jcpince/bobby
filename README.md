@@ -1,5 +1,7 @@
 # Bobby the robot
 
+[![Join the chat at https://gitter.im/bot_bobby/Lobby](https://badges.gitter.im/bot_bobby/Lobby.svg)](https://gitter.im/bot_bobby/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 See http://www.generationrobots.com/blog/en/2015/02/robotic-simulation-scenarios-with-gazebo-and-ros/
 
 Sources to operate a simple 2 wheels + caster wheel.
