@@ -27,3 +27,7 @@ In order to preview the image:
  necessary to this project.
  - You might need to reset the world and pose in the Gazebo GUI prior
  to starting the stimulation.
+ - Install following ROS packages :
+   - sudo apt-get install ros-kinetic-gmapping
+   - sudo apt-get install ros-kinetic-ros-controllers
+
