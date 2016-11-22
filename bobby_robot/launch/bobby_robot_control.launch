@@ -1,0 +1,3 @@
+<launch>
+  <node name="bobby_robot_control" pkg="bobby_robot" type="bobby_robot_control" output="screen"/>
+</launch>
